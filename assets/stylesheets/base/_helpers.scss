@@ -1,0 +1,65 @@
+/******************************************************
+ * base/helpers
+ *******************************************************/
+
+
+/******************************************************
+ * Clear fix
+ *******************************************************/
+%clearfix{
+  &:after{
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  zoom: 1;
+}
+
+/******************************************************
+ * Image replacement
+ *******************************************************/
+%image_replacement {
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/******************************************************
+ * Centered Content
+ *******************************************************/
+%centered_content{
+  width: $GRID_WIDTH;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/******************************************************
+ * No underline
+ *******************************************************/
+%no_underline{
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+/******************************************************
+ * Dark texture background
+ *******************************************************/
+%dark_texture_background{
+  background: inline-image("inline/dark_fish_skin.png") repeat;
+}
+
+/******************************************************
+ * Ellipsis
+ *******************************************************/
+%ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

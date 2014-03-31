@@ -1,0 +1,49 @@
+/*************************************************************************************
+* modules/section_header
+**************************************************************************************/
+
+.section-header{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.section-header-content{
+  @extend %centered_content;
+}
+
+.section-header-title{
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 64px;
+  margin-bottom: 24px;
+}
+
+.section-header-subtitle{
+  margin:0;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 300;
+  width: width_from_columns(9);
+}
+
+/*************************************************************************************
+* Themes
+**************************************************************************************/
+
+@mixin section_header_theme($background-color, $text_color){
+  background-color: $background-color;
+  color: $text_color;
+}
+
+.category-page .section-header{
+  margin-bottom: 24px;
+}
+
+.category-page-ruby .section-header{
+  @include section_header_theme($RUBY_COLOR, #fff);
+}
+
+.category-page-js .section-header{
+  @include section_header_theme($JS_COLOR, #333);
+}

@@ -1,0 +1,44 @@
+/******************************************************
+ * layout/header
+ *
+ * HTML structure:
+ * <header class='site-header'>
+ *   <div class='site-header-main'>
+ *      <div class='site-header-main-content'>
+ *        <div class='site-logo'></div>
+ *        <div class='minicart'></div>
+ *      </div>
+ *   </div>
+ * </header>
+ *******************************************************/
+
+$site_header_height: 60px;
+
+.site-header-main{
+  @extend %dark_texture_background;
+}
+
+.site-header-main-content{
+  @extend %centered_content;
+  height: $site_header_height;
+  position: relative;
+}
+
+.site-header-main .site-logo{
+  @extend %image_replacement;
+  margin: 0;
+  width: 162px;
+  height: 22px;
+  background: sprite($sprite_map, logo);
+  position:absolute;
+  left:0;
+  top:50%;
+  margin-top: -11px;
+}
+
+.site-header .minicart{
+  position: absolute;
+  right:0;
+  top:0;
+  height: $site_header_height;
+}

@@ -1,0 +1,25 @@
+/******************************************************
+ * core/basic
+ *******************************************************/
+
+body,
+select{
+  color: $TEXT_COLOR;
+}
+
+a {
+  @include colorful-links($LINK_COLOR);
+  text-decoration: underline;
+
+  &:focus{
+    outline: thin dotted;
+  }
+}
+
+
+nav ul,
+nav ol{
+  margin: 0;
+  padding: 0;
+  list-style: outside none;
+}

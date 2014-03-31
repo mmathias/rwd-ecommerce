@@ -1,0 +1,20 @@
+/*************************************************************************************
+* layout/footer
+**************************************************************************************/
+
+.site-footer{
+  @extend %dark_texture_background;
+  text-align: center;
+  color: #fff;
+
+  a{
+    color: #fff;
+  }
+}
+
+.site-footer p{
+  font-size: 12px;
+  line-height: 24px;
+  padding: 32px 0;
+  margin: 0;
+}

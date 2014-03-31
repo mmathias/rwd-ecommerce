@@ -1,0 +1,26 @@
+/*************************************************************************************
+* layout/main
+**************************************************************************************/
+
+body{
+  background: inline-image("inline/straws.png") repeat;
+}
+
+.site-main-content{
+  width: width_from_columns(12);
+}
+
+.site-side-content{
+  width: width_from_columns(3);
+  float:left;
+}
+
+.site-side-content + .site-main-content{
+  width: width_from_columns(9);
+  float:right;
+}
+
+.site-content-block{
+  @extend %centered_content;
+  @extend %clearfix;
+}

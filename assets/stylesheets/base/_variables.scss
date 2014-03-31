@@ -1,0 +1,26 @@
+/******************************************************
+ * base/variables
+ *******************************************************/
+
+/******************************************************
+ * Grid and Typography
+ *******************************************************/
+$PROJECT_FONT_SIZE: 16px;
+$PROJECT_BASELINE: 24px;
+
+$GRID_COLUMN_WIDTH: 65px;
+$GRID_GUTTER: 20px;
+
+/******************************************************
+ * Colors
+ *******************************************************/
+$TEXT_COLOR: #555;
+$LINK_COLOR: #37b2c0;
+$PLACEHOLDER_COLOR: lighten($TEXT_COLOR, 15%);
+
+$RUBY_COLOR: #9f0000;
+$JS_COLOR: #ecd300;
+$HTML_COLOR: #f48400;
+$DESIGN_COLOR: #006fe1;
+$DEVOPS_COLOR: #505050;
+$GRAY_BORDER_COLOR: #ccc;

@@ -1,0 +1,90 @@
+/******************************************************
+ * modules/minicart
+ *******************************************************/
+.minicart{
+  width: width_from_columns(3);
+  min-height: 60px;
+}
+
+.minicart-header{
+  height: 60px;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+
+  &:before{
+    content:"";
+    display:block;
+    width: 24px;
+    height: 20px;
+    background: sprite($sprite-map, white_cart) no-repeat;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    margin-top: -10px;
+  }
+}
+
+.minicart .product-quantity,
+.minicart .minicart-subtotal{
+  @include box-sizing(border-box);
+  font-size: 14px;
+  line-height: 60px;
+  height: 60px;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+
+.minicart .product-quantity{
+  width: 135px;
+  font-weight: normal;
+  padding-left: 50px;
+  left: 0;
+}
+
+.minicart .minicart-subtotal{
+  width: 100px;
+  text-align: right;
+  right: 0;
+  padding-right: 12px;
+}
+
+.minicart-content{
+  display: none;
+  background: #fff;
+}
+
+/*************************************************************************************
+* On hover
+**************************************************************************************/
+
+.minicart:hover{
+  box-shadow: 0 0 2px 0 rgba(#000, .3);
+  background: #fff;
+}
+
+.minicart:hover .minicart-header{
+  color: $TEXT_COLOR;
+}
+
+.minicart:hover .minicart-header:before{
+  background: sprite($sprite-map, gray_cart) no-repeat;
+}
+
+.minicart:hover .minicart-content{
+  display:block;
+}
+
+/*********************************************************************
+*  =Finalize button
+*********************************************************************/
+
+.minicart-finalize {
+  padding: 12px;
+}
+
+.minicart-finalize .finalize-purchase-bt {
+  @extend %large_bt;
+}
+

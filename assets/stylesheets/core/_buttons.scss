@@ -1,0 +1,31 @@
+/*********************************************************************
+*  core/buttons
+*********************************************************************/
+
+%large_bt {
+  font-size: em(16px);
+  height: em(36px);
+  width: 100%;
+  max-width: em(300px);
+  padding: 0;
+  line-height: em(36px);
+}
+
+.primary-bt {
+  @include box-sizing(border-box);
+  display: inline-block;
+  background: #ae0000;
+  color: #fff;
+  text-transform: lowercase;
+  box-shadow: 0 2px 0 darken(#ae0000, 10%);
+  border-radius: em(3px);
+  text-decoration: none;
+  text-align: center;
+  padding: 1em;
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: #fff;
+  }
+}

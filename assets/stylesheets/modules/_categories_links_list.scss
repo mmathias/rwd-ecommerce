@@ -1,0 +1,37 @@
+/*************************************************************************************
+* modules/categories_links_list
+**************************************************************************************/
+
+.categories-links-category:before{
+  content:"";
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  background-image: sprite-url($sprite-map);
+  background-repeat: no-repeat;
+}
+
+$links: ruby, js, html, design, devops;
+
+@each $link in $links{
+  .categories-links-list .#{$link}:before{
+    background-position: sprite-position($sprite-map, $link);
+  }
+}
+// .categories-links-list .ruby:before{
+//   background-position: sprite-position($sprite-map, ruby);
+// }
+// .categories-links-list .js:before{
+//   background-position: sprite-position($sprite-map, js);
+// }
+// .categories-links-list .html:before{
+//   background-position: sprite-position($sprite-map, html);
+// }
+// .categories-links-list .design:before{
+//   background-position: sprite-position($sprite-map, design);
+// }
+// .categories-links-list .devops:before{
+//   background-position: sprite-position($sprite-map, devops);
+// }

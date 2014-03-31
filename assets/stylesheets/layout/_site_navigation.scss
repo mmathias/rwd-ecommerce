@@ -1,0 +1,68 @@
+/******************************************************
+* layout/site_navigation
+*
+* HTML structure:
+*
+* <nav class='site-navigation'>
+*   <div class='site-navigation-content'>
+*     <ul class='site-navigation-categories'>
+*       <li class='site-navigation-category js'>
+*         <a href='#'></a>
+*       </li>
+*     </ul>
+*   </div>
+* </nav>
+ *******************************************************/
+
+@mixin site_navigation_hover($background_color: #333){
+  a:hover{
+    background-color: $background_color;
+  }
+}
+
+.site-navigation{
+  background: #96958f;
+}
+
+.site-navigation-content{
+  @extend %centered_content;
+  height: 42px;
+}
+
+.site-navigation-categories{
+  margin-left: -15px;
+}
+
+.site-navigation-category{
+  float:left;
+}
+
+.site-navigation-category a{
+  display: inline-block;
+  line-height: 42px;
+  font-weight: bold;
+  color: #fff;
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+
+.site-navigation-categories .ruby{
+  @include site_navigation_hover($RUBY_COLOR);
+}
+
+.site-navigation-categories .js {
+  @include site_navigation_hover($JS_COLOR);
+}
+
+.site-navigation-categories .html {
+  @include site_navigation_hover($HTML_COLOR);
+}
+
+.site-navigation-categories .design {
+  @include site_navigation_hover($DESIGN_COLOR);
+}
+
+.site-navigation-categories .devops {
+  @include site_navigation_hover($DEVOPS_COLOR);
+}

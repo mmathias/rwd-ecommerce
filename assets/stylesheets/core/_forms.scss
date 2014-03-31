@@ -1,0 +1,24 @@
+/*********************************************************************
+*  core/forms
+*********************************************************************/
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+  @include box-sizing(border-box);
+  background: #f7f7f7;
+  border: 1px solid #acaba7;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px 0 #c9c9c9 inset;
+  color: $TEXT_COLOR;
+  font-size: 100%;
+  padding: 0.38em;
+  width: 100%; /* default behavior is extending to full area, overwrite as needed */
+  font-family: sans-serif;
+  outline: 0;
+}
+
+::-webkit-input-placeholder { font-style: normal; color: $PLACEHOLDER_COLOR; }
+input:-moz-placeholder { font-style: normal; color: $PLACEHOLDER_COLOR; }
