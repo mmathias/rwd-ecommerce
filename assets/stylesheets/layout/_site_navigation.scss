@@ -20,17 +20,27 @@
   }
 }
 
+@mixin site_navigation_background($background_color: #333){
+  a{
+    background-color: $background_color;
+  }
+
+  a:hover{
+    background-color: darken($background_color, +10%);
+  }
+}
+
 .site-navigation{
   background: #96958f;
 }
 
 .site-navigation-content{
   @extend %centered_content;
-  height: 42px;
+  height: em(42px);
 }
 
 .site-navigation-categories{
-  margin-left: -15px;
+  margin-left: em(-15px);
 }
 
 .site-navigation-category{
@@ -39,10 +49,10 @@
 
 .site-navigation-category a{
   display: inline-block;
-  line-height: 42px;
+  line-height: em(42px);
   font-weight: bold;
   color: #fff;
-  padding: 0 15px;
+  padding: 0 em(15px);
   text-decoration: none;
 }
 
@@ -53,6 +63,7 @@
 
 .site-navigation-categories .js {
   @include site_navigation_hover($JS_COLOR);
+  color: #333;
 }
 
 .site-navigation-categories .html {
@@ -65,4 +76,81 @@
 
 .site-navigation-categories .devops {
   @include site_navigation_hover($DEVOPS_COLOR);
+}
+
+/******************************************************
+ * Media Queries
+ *******************************************************/
+@media (max-width: 500px){
+
+  .site-navigation-content{
+    width: 100%;
+    height: auto;
+  }
+
+  .site-navigation-category{
+    float: none;
+  }
+
+  .site-navigation-categories{
+    @include single-transition(height, .5s, ease-in);
+    margin-left: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .site-navigation-category a{
+    display: block;
+  }
+
+
+  .site-navigation-categories .ruby{
+    @include site_navigation_background($RUBY_COLOR);
+  }
+
+  .site-navigation-categories .js {
+    @include site_navigation_background($JS_COLOR);
+    color: #333;
+  }
+
+  .site-navigation-categories .html {
+    @include site_navigation_background($HTML_COLOR);
+  }
+
+  .site-navigation-categories .design {
+    @include site_navigation_background($DESIGN_COLOR);
+  }
+
+  .site-navigation-categories .devops {
+    @include site_navigation_background($DEVOPS_COLOR);
+  }
+}
+
+/******************************************************
+ * Toggle
+ *******************************************************/
+
+.menu-toggle-title{
+  font-size: em(18px);
+  height: em(42px, 18px);
+  line-height: em(42px, 18px);
+  padding: 0 em(15px, 18px);
+  color: white;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+}
+
+#menu-toggle:checked + .site-navigation-categories {
+  height: auto;
+}
+
+#menu-toggle{
+  display: none;
+}
+
+@media (min-width: 501px){
+  .menu-toggle-title{
+    display: none;
+  }
 }

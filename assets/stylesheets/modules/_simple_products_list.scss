@@ -14,19 +14,17 @@
   height: 70px;
   margin-bottom: 0;
   position: relative;
-  padding:12px;
+  padding: em(12px);
   border-bottom: 1px solid $GRAY_BORDER_COLOR;
 }
 
 .simple-products-list .product-thumb{
   position: absolute;
-  left: 12px;
-  top: 12px;
+  left: em(12px);
+  top: em(12px);
   margin: 0;
 
-  img{
-    display: block;
-  }
+  img{ display: block; }
 }
 
 .simple-products-list .product-data{
@@ -35,9 +33,9 @@
 
 .simple-products-list .product-title{
   @extend %ellipsis;
-  font-size: 12px;
-  line-height: 18px;
-  height: 18px;
+  font-size: em(12px);
+  line-height: em(18px, 12px);
+  height: em(18px, 12px);
   font-weight: normal;
   padding: 0;
   margin: -2px 0 0;
@@ -49,15 +47,27 @@
 }
 
 .simple-products-list .product-author{
-  font-size: 10px;
+  font-size: em(10px);
   text-transform: uppercase;
   color: #999;
-  margin-bottom: 4px;
+  margin-bottom: em(4px,10px);
   margin-top: 0;
 }
 
 .simple-products-list .product-price{
-  font-size: 12px;
-  line-height: 18px;
+  font-size: em(12px);
+  line-height: em(18px, 12px);
   margin:0;
+}
+
+.simple-products-list .product-remove {
+  font-size: em(11px);
+  position: absolute;
+  right: em(12px, 11px);
+  bottom: em(4px, 11px);
+  margin: 0;
+
+  a {
+    color: $TEXT_COLOR;
+  }
 }

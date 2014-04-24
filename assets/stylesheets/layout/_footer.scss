@@ -13,8 +13,8 @@
 }
 
 .site-footer p{
-  font-size: 12px;
-  line-height: 24px;
-  padding: 32px 0;
+  font-size: em(12px);
+  line-height: em(24px,12px);
+  padding: em(32px,12px) 0;
   margin: 0;
 }

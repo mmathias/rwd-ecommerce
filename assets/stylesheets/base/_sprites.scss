@@ -2,4 +2,4 @@
  * base/sprites
  *******************************************************/
 
-$sprite_map: sprite-map("sprite/*.png", $spacing: 18px);
+$sprite_map: sprite-map("sprite/*.png", $spacing: 18px, $repeat: no-repeat, $layout: vertical);

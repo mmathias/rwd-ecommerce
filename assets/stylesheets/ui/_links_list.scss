@@ -19,13 +19,13 @@
 
 .links-list{
   background: #fff;
-  margin-bottom: 24px;
+  margin-bottom: em(24px);
 }
 
 .links-list-title{
   @extend %dark_texture_background;
-  font-size: 14px;
-  line-height: 32px;
+  font-size: em(14px);
+  line-height: em(32px,14px);
   color: #fff;
   padding: 0 14px;
   margin: 0;
@@ -39,27 +39,68 @@
 }
 
 .links-list-link{
-  font-size: 12px;
+  font-size: em(12px);
   display: table;
-  height: 42px;
+  height: em(42px, 12px);
   width: 100%;
 }
 
 .links-list-link a{
   @include box-sizing(border-box);
   @extend %no_underline;
-  border-top: 1px solid #ccc;
+  border-top: em(1px, 12px) solid #ccc;
   padding: 0 14px;
   color: $TEXT_COLOR;
   display: table-cell;
   vertical-align: middle;
 
   &:hover {
-    @include single-transition(all, .2s, ease-out);
+    @include single-transition(all, .15s, ease-out);
     background: darken(#fff, 5%);
   }
 }
 
 .links-list-link:first-child a{
   border-top: none;
+}
+
+@media (max-width: 1024px){
+  .links-list{
+    background: none;
+  }
+
+  .links-list-title {
+    background: none;
+    font-size: em(14px);
+    line-height: em(24px, 14px);
+    color: $TEXT_COLOR;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  .links-list-link {
+    font-size: em(14px);
+    display: inline;
+    height: auto;
+    width: auto;
+
+    &:after {
+      content: ", ";
+    }
+
+    &:last-child:after{
+      content: "";
+    }
+  }
+
+  .links-list-link a {
+    border-top: none;
+    padding: 0;
+    display: inline;
+    text-decoration: underline;
+
+    &:hover {
+      background: none;
+    }
+  }
 }

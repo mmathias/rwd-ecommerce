@@ -14,7 +14,7 @@ textarea {
   box-shadow: 0 2px 3px 0 #c9c9c9 inset;
   color: $TEXT_COLOR;
   font-size: 100%;
-  padding: 0.38em;
+  padding: em(8px);
   width: 100%; /* default behavior is extending to full area, overwrite as needed */
   font-family: sans-serif;
   outline: 0;

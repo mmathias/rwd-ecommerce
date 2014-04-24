@@ -3,7 +3,12 @@
 *********************************************************************/
 
 body {
-  font: normal normal normal #{percentage($PROJECT_FONT_SIZE/16px)}/#{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)} sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: #{percentage($PROJECT_FONT_SIZE/16px)};
+  line-height: #{($PROJECT_BASELINE/$PROJECT_FONT_SIZE)};
+  font-family: sans-serif;
 }
 
 /*********************************************************************
@@ -26,7 +31,7 @@ h2 {
 }
 
 h3 {
-  font-size: em(22px);
+  font-size: em(22px, $PROJECT_FONT_SIZE);
   line-height: em(26px, 22px);
   margin-bottom: em(26px, 22px);
   padding-top: em(8px, 22px);
@@ -34,7 +39,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1em;
+  font-size: em(16px);
   line-height: em(26px);
   margin-bottom: em(26px);
   padding-top: em(8px);

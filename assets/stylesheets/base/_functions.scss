@@ -28,11 +28,23 @@
   @return flex($target, $context, "%");
 }
 
-// Alias to 'flex' function, using 'em' as format.
-@function em($target, $context: $PROJECT_FONT_SIZE){
-  @return flex($target, $context, "em");
-}
-
 @function width_from_columns($columns){
   @return ($columns * $GRID_COLUMN_WIDTH) + (($columns - 1) * $GRID_GUTTER);
+}
+
+@function percentage_from_columns($columns, $context_columns: 12){
+  $context_diff: (12/ $context_columns);
+  $column_perc_width: percentage($GRID_COLUMN_WIDTH / $GRID_WIDTH) * $context_diff;
+
+  @return ($columns * $column_perc_width) + (($columns - 1) * percentage_from_gutter($context_columns)) ;
+}
+
+@function percentage_from_gutter($context_columns: 12){
+  $context_diff: (12/ $context_columns);
+  @return percentage($GRID_GUTTER / $GRID_WIDTH) * $context_diff;
+}
+
+// Alias to 'flex' function, using 'em' as format.
+@function em($target, $context: $PROJECT_FONT_SIZE){
+  @return #{$target/$context}em;
 }

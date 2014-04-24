@@ -16,3 +16,54 @@
 @import "layout/*";
 @import "ui/*";
 @import "modules/*";
+
+
+.banner{
+  height: 60px;
+  background:yellowgreen;
+  margin-bottom: em(24px);
+}
+
+@mixin flex(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexbox-order($order){
+  -webkit-box-ordinal-group: $order;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
+
+@mixin flex_direction() {
+  -moz-box-orient:vertical;
+  -webkit-box-orient:vertical;
+  -ms-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width: width_from_columns(15)){
+  .site-side-content{
+    @include flex;
+    @include flex_direction;
+  }
+
+  .banner{
+    @include flexbox-order(2);
+  }
+
+  .most-sold-list{
+    @include flexbox-order(1);
+  }
+
+  .books-categories-list{
+    @include flexbox-order(3);
+  }
+
+}

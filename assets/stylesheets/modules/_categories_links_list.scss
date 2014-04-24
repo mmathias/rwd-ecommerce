@@ -8,7 +8,7 @@
   vertical-align: middle;
   width: 18px;
   height: 18px;
-  margin-right: 10px;
+  margin-right: em(10px, 12px);
   background-image: sprite-url($sprite-map);
   background-repeat: no-repeat;
 }
@@ -20,18 +20,10 @@ $links: ruby, js, html, design, devops;
     background-position: sprite-position($sprite-map, $link);
   }
 }
-// .categories-links-list .ruby:before{
-//   background-position: sprite-position($sprite-map, ruby);
-// }
-// .categories-links-list .js:before{
-//   background-position: sprite-position($sprite-map, js);
-// }
-// .categories-links-list .html:before{
-//   background-position: sprite-position($sprite-map, html);
-// }
-// .categories-links-list .design:before{
-//   background-position: sprite-position($sprite-map, design);
-// }
-// .categories-links-list .devops:before{
-//   background-position: sprite-position($sprite-map, devops);
-// }
+
+
+@media (max-width: 1024px){
+  .categories-links-category:before{
+    margin-right: em(4px, 12px);
+  }
+}

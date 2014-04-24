@@ -7,17 +7,17 @@ body{
 }
 
 .site-main-content{
-  width: width_from_columns(12);
+  width: 100%; /* 1000px / 1000px */
 }
 
 .site-side-content{
-  width: width_from_columns(3);
-  float:left;
+  width: percentage_from_columns(3);/* 235px / 1000px */
+  float: left;
 }
 
 .site-side-content + .site-main-content{
-  width: width_from_columns(9);
-  float:right;
+  width: percentage_from_columns(9); /* 745px / 1000px */
+  float: right;
 }
 
 .site-content-block{

@@ -1,0 +1,72 @@
+/******************************************************
+ * =Media Queries
+ *******************************************************/
+
+@media (max-width: 1024px){
+  .site-side-content{
+    float:none;
+    width: percentage_from_columns(12);
+  }
+
+  .site-side-content + .site-main-content{
+    float:none;
+    width: percentage_from_columns(12);
+  }
+
+  %centered_content {
+    width: 740px;
+  }
+}
+
+@media (min-width: width_from_columns(15)){
+  %centered_content {
+    width: width_from_columns(15);
+  }
+}
+
+@media (max-width: 767px){
+  %centered_content {
+    width: 600px;
+  }
+}
+
+@media (max-width: 640px){
+  %centered_content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 500px){
+  .site-header-main{
+    padding-top: em(24px);
+  }
+
+  .site-header-main .site-logo{
+    position:static;
+    margin-top: 0;
+    font-size: em(16px);
+    margin-bottom: em(16px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-header .minicart{
+    position: static;
+  }
+
+  .site-header-main-content{
+    height: auto;
+    width: 100%;
+  }
+}
+
+// medida padrao de um browser é 96dpi * 1.5 = 144dpi
+// @media  (-webkit-min-device-pixel-ratio: 1.5),
+//        (min-resolution: 144dpi){
+//   .site-header-main .site-logo{
+//     background: url(../assets/images/logo@2x.png);
+//     background-size: 162px 22px;
+//   }
+// }
+
+

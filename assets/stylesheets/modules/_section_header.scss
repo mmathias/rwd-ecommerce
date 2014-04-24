@@ -3,8 +3,8 @@
 **************************************************************************************/
 
 .section-header{
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: em(32px);
+  padding-bottom: em(32px);
 }
 .section-header-content{
   @extend %centered_content;
@@ -13,16 +13,16 @@
 .section-header-title{
   margin-top: 0;
   padding-top: 0;
-  font-size: 42px;
+  font-size: em(42px);//target/context 42/16
   font-weight: 300;
-  line-height: 64px;
-  margin-bottom: 24px;
+  line-height: em(50px,42px);
+  margin-bottom: em(24px, 42px);
 }
 
 .section-header-subtitle{
   margin:0;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: em(19px);
+  line-height: em(32px, 19px);
   font-weight: 300;
   width: width_from_columns(9);
 }
@@ -37,7 +37,7 @@
 }
 
 .category-page .section-header{
-  margin-bottom: 24px;
+  margin-bottom: em(24px);
 }
 
 .category-page-ruby .section-header{
@@ -46,4 +46,13 @@
 
 .category-page-js .section-header{
   @include section_header_theme($JS_COLOR, #333);
+}
+
+/******************************************************
+ * Media Queries
+ *******************************************************/
+@media (max-width: 767px){
+  .section-header-subtitle{
+    width: 100%;
+  }
 }
